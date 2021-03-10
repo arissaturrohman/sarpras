@@ -8,7 +8,7 @@ $data = $detail->fetch_assoc();
 <div class="card shadow mb-4">
   <div class="card-body">
     <form action="" method="POST">
-      <input type="text" name="id_barang" id="id_barang">
+      <input type="hidden" name="id_barang" id="id_barang">
       <input type="hidden" name="id_kir" id="id_kir" value="<?= $data['id_kir']; ?>">
       <input type="hidden" name="id_ruangan" id="id_ruangan" value="<?= $data['id_ruangan']; ?>">
       <div class="form-row">

@@ -1,6 +1,7 @@
 <?php
 
 include("asset/inc/config.php");
+include("vendor/autoload.php");
 error_reporting(0);
 ?>
 
@@ -238,6 +239,7 @@ error_reporting(0);
                 <tr>
                   <th width="5%">No</th>
                   <th class="text-center">Kode Barang</th>
+                  <th class="text-center">No Register</th>
                   <th class="text-center">Nama Barang</th>
                   <th class="text-center">Aksi</th>
                 </tr>
@@ -251,6 +253,7 @@ error_reporting(0);
                   <tr>
                     <td><?= $no++; ?></td>
                     <td><?= $data_brg['kd_barang']; ?></td>
+                    <td><?= $data_brg['register']; ?></td>
                     <td><?= $data_brg['nama_barang']; ?></td>
                     <td>
                       <button class="btn btn-sm btn-info" id="barang" data-id="<?= $data_brg['id_barang']; ?>" data-barang="<?= $data_brg['nama_barang']; ?>" data-kd_barang="<?= $data_brg['kd_barang']; ?>" data-register="<?= $data_brg['register']; ?>" data-merk="<?= $data_brg['merk']; ?>" data-no_seri="<?= $data_brg['no_seri']; ?>" data-bahan="<?= $data_brg['bahan']; ?>" data-ukuran="<?= $data_brg['ukuran']; ?>" data-tahun="<?= $data_brg['tahun']; ?>" data-jumlah="<?= $data_brg['jumlah']; ?>" data-harga="<?= $data_brg['harga']; ?>" data-kondisi="<?= $data_brg['kondisi']; ?>" data-ket="<?= $data_brg['ket']; ?>"> <i class=" fas fa-check"></i>
@@ -288,6 +291,13 @@ error_reporting(0);
 
   <!-- Page level custom scripts -->
   <script src="asset/js/demo/datatables-demo.js"></script>
+
+  <script>
+    $(".custom-file-input").on("change", function() {
+      var fileName = $(this).val().split("\\").pop();
+      $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+    });
+  </script>
 
   <!-- <script type="text/javascript">
     $(function() {

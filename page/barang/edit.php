@@ -12,7 +12,7 @@ $data = $edit->fetch_assoc();
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="kd_barang">Kode Barang</label>
-          <input type="text" class="form-control" id="kd_barang" name="kd_barang" value="<?= $data['kd_barang']; ?>" autofocus>
+          <input type="text" class="form-control" id="kd_barang" name="kd_barang" value="<?= $data['kd_barang']; ?>">
         </div>
         <div class="form-group col-md-6">
           <label for="register">Register</label>
@@ -108,7 +108,7 @@ $ket          = $_POST['ket'];
 if (isset($_POST['edit'])) {
 
   $sql = $conn->query("UPDATE tb_barang SET 
-  kd_barang   = '$kd_barang',
+  kd_barang   = '$kd_brg',
   register    = '$register',
   nama_barang = '$nama_brg',
   merk        = '$merk',

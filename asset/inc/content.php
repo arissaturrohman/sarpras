@@ -12,6 +12,8 @@ if ($page == "barang") {
     include "page/barang/edit.php";
   } elseif ($action == "delete") {
     include "page/barang/delete.php";
+  } elseif ($action == "import") {
+    include "page/barang/import.php";
   }
 } elseif ($page == "ruangan") {
   if ($action == "") {
